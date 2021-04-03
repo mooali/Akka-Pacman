@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ch.bfh.ti.blockweek2</groupId>
+  <artifactId>Biel-Java-01</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>PACMAN</name>
+  <url>http://maven.apache.org</url>
+
+  <developers>
+    <developer>
+	  <id>beo1</id>
+	  <name>Olivier Biberstein</name>
+	  <email>olivier.biberstein@bfh.ch</email>
+	  <organization>BFH-TI</organization>
+	  <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+	  <roles>
+        <role>Developer</role>
+	  </roles>
+	  <timezone>+1</timezone>
+    </developer>
+
+	<!-- Add the information of each developer -->
+	
+	<developer>
+	  <id>aliam1</id>
+	  <name>Mohammed Ali</name>
+	  <email>mohammed.ali@students.bfh</email>
+	  <organization>BFH-TI</organization>
+	  <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+	  <roles>
+        <role>Developer</role>
+	  </roles>
+	  <timezone>+1</timezone>
+	</developer>
+
+    <developer>
+      <id>lienv1</id>
+      <name>Bobby Lien</name>
+      <email>vienphatbobby.lien@students.bfh.ch</email>
+      <organization>BFH-TI</organization>
+      <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+
+    <developer>
+      <id>abdur1</id>
+      <name>Rodi Abdullah</name>
+      <email>rodi.abdullah@students.bfh.ch</email>
+      <organization>BFH-TI</organization>
+      <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+
+    <developer>
+      <id>gallm10</id>
+      <name>Mirco Gall</name>
+      <email>mircofabio.gall@students.bfh.ch</email>
+      <organization>BFH-TI</organization>
+      <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+
+    <developer>
+      <id>mullk8</id>
+      <name>Mac Mueller</name>
+      <email>mac.mueller@students.bfh.ch</email>
+      <organization>BFH-TI</organization>
+      <organizationUrl>http://www.ti.bfh.ch/</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.release>11</maven.compiler.release>
+    <site.version>3.6</site.version>
+    <javadoc.version>3.2.0</javadoc.version>
+    <akka.version>2.6.10</akka.version>
+  </properties>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor-typed_2.13</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor-testkit-typed_2.13</artifactId>
+      <version>${akka.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-testkit_2.13</artifactId>
+      <version>2.6.10</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor-testkit-typed_2.13</artifactId>
+      <version>2.6.10</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <configuration>
+          <executable>java</executable>
+          <arguments>
+            <argument>-classpath</argument>
+            <classpath />
+            <argument>ch.bfh.ti.blockweek2.PingPongApp</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${site.version}</version>
+        <configuration>
+          <locales>en</locales>
+          <outputEncoding>UTF-8</outputEncoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+<!--          <additionalOptions>-html5</additionalOptions>-->
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+          <showAvatarImages>false</showAvatarImages>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>dependencies</report>
+              <report>project-team</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+	  
+	</plugins>
+  </reporting>
+
+</project>
